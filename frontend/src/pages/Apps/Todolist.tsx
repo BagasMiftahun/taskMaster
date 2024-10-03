@@ -704,6 +704,21 @@ const Todolist = () => {
                                 </button>
                                 <button
                                     type="button"
+                                    className={`w-full flex items-center h-10 p-1 hover:bg-white-dark/10 rounded-md dark:hover:bg-[#181F32] font-medium text-info ltr:hover:pl-3 rtl:hover:pr-3 duration-300 ${
+                                        selectedTab === 'update' && 'ltr:pl-3 rtl:pr-3 bg-gray-100 dark:bg-[#181F32]'
+                                    }`}
+                                    onClick={() => {
+                                        tabChanged();
+                                        setSelectedTab('update');
+                                    }}
+                                >
+                                    <IconSquareRotated className="fill-info shrink-0" />
+                                    <div className="ltr:ml-3 rtl:mr-3">Update</div>
+                                </button>
+                                <div className="h-px w-full border-b border-white-light dark:border-[#1b2e4b]"></div>
+                                <div className="text-white-dark px-1 py-3">Priority</div>
+                                <button
+                                    type="button"
                                     className={`w-full flex items-center h-10 p-1 hover:bg-white-dark/10 rounded-md dark:hover:bg-[#181F32] font-medium text-warning ltr:hover:pl-3 rtl:hover:pr-3 duration-300 ${
                                         selectedTab === 'low' && 'ltr:pl-3 rtl:pr-3 bg-gray-100 dark:bg-[#181F32]'
                                     }`}
@@ -715,7 +730,6 @@ const Todolist = () => {
                                     <IconSquareRotated className="fill-warning shrink-0" />
                                     <div className="ltr:ml-3 rtl:mr-3">Low</div>
                                 </button>
-
                                 <button
                                     type="button"
                                     className={`w-full flex items-center h-10 p-1 hover:bg-white-dark/10 rounded-md dark:hover:bg-[#181F32] font-medium text-primary ltr:hover:pl-3 rtl:hover:pr-3 duration-300 ${
@@ -741,19 +755,6 @@ const Todolist = () => {
                                 >
                                     <IconSquareRotated className="fill-danger shrink-0" />
                                     <div className="ltr:ml-3 rtl:mr-3">High</div>
-                                </button>
-                                <button
-                                    type="button"
-                                    className={`w-full flex items-center h-10 p-1 hover:bg-white-dark/10 rounded-md dark:hover:bg-[#181F32] font-medium text-info ltr:hover:pl-3 rtl:hover:pr-3 duration-300 ${
-                                        selectedTab === 'update' && 'ltr:pl-3 rtl:pr-3 bg-gray-100 dark:bg-[#181F32]'
-                                    }`}
-                                    onClick={() => {
-                                        tabChanged();
-                                        setSelectedTab('update');
-                                    }}
-                                >
-                                    <IconSquareRotated className="fill-info shrink-0" />
-                                    <div className="ltr:ml-3 rtl:mr-3">Update</div>
                                 </button>
                             </div>
                         </PerfectScrollbar>
